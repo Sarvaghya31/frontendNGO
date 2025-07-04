@@ -1,8 +1,10 @@
 // axiosClient.js
 import axios from "axios";
-
+const baseURL = import.meta.env.DEV
+  ? "/api" // during development, use Vite proxy
+  : import.meta.env.VITE_API_BASE_URL; // use full backend URL in production
 const axiosClientUser = axios.create({
-  baseURL: "/api", 
+  baseURL, 
   withCredentials: true,
 });
 
