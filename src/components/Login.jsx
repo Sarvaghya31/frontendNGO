@@ -23,7 +23,7 @@ function Login() {
       const baseURL = import.meta.env.DEV
   ? "/api"
   : import.meta.env.VITE_API_BASE_URL; 
-      const response=await axios.post(`/${baseURL}/users/loginUser`,data,{withCredentials:true});
+      const response=await axios.post(`${baseURL}/users/loginUser`,data,{withCredentials:true});
       console.log(response);
       if(response)
       {

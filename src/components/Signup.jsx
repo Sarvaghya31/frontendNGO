@@ -112,12 +112,12 @@ function Signup() {
   ? "/api" 
   : import.meta.env.VITE_API_BASE_URL; 
     try{
-      const res=await axios.post(`/${baseURL}/NGO/validateNGO`,{id:otpid,otp:data.otp});
+      const res=await axios.post(`${baseURL}/NGO/validateNGO`,{id:otpid,otp:data.otp});
       console.log("Response of validation",res);
       if(res && res.data && res.data.data && res.data.data.validated)
       {
         try{
-          const response=await axios.post(`/${baseURL}/NGO/registerNGO`,dataFormNGO)
+          const response=await axios.post(`${baseURL}/NGO/registerNGO`,dataFormNGO)
           console.log("Response of Register NGO",response)
           if(response?.data?.success)
           {
